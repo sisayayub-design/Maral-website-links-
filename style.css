@@ -1,35 +1,31 @@
-/* =========================================================
-MARAL — ANIMATED SOCIAL LINKS
-Futuristic • Glassmorphism • Neon • Fully Responsive
-========================================================= */
+/* ==================================================
+M A R A L
+GALAXY • NEON LUXURY • ANIMATED GLASS
+================================================== */
 
 @import url(‘https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap’);
 
-/* =========================
-
-1. ROOT VARIABLES
-    ========================= */
+/* ––––– COLOR SYSTEM ––––– */
 
 :root {
-–bg: #05030d;
-–glass: rgba(17, 13, 35, 0.76);
-–glass-border: rgba(255, 255, 255, 0.12);
+–bg: #080513;
+–panel: rgba(19, 11, 39, .82);
 
 --purple: #a855f7;
---pink: #ff3cac;
---blue: #00d9ff;
---gold: #ffd166;
---green: #00f5a0;
---text: #ffffff;
---muted: #b8b3cc;
+--violet: #7c3aed;
+--pink: #ff4fd8;
+--cyan: #42e8ff;
+--blue: #617bff;
+--gold: #ffe29a;
+--white: #ffffff;
+--text: #fffaff;
+--muted: #c2b7d9;
+--border: rgba(255, 255, 255, .13);
 --radius: 24px;
---transition: 0.35s ease;
 
 }
 
-/* =========================
-2. RESET
-========================= */
+/* ––––– RESET ––––– */
 
 * {
     margin: 0;
@@ -39,30 +35,33 @@ Futuristic • Glassmorphism • Neon • Fully Responsive
 
 html {
 scroll-behavior: smooth;
-scroll-padding-top: 30px;
 }
 
 body {
 min-height: 100vh;
 overflow-x: hidden;
-position: relative;
+isolation: isolate;
 
-background:
-    radial-gradient(ellipse at 10% 10%, #291047 0%, transparent 40%),
-    radial-gradient(ellipse at 90% 80%, #071e3e 0%, transparent 45%),
-    var(--bg);
-color: var(--text);
-font-family: 'Vazirmatn', sans-serif;
+padding: 55px 18px 45px;
 display: flex;
 flex-direction: column;
 align-items: center;
-padding: 55px 18px 45px;
+color: var(--text);
+font-family: 'Vazirmatn', sans-serif;
+background:
+    radial-gradient(ellipse at 50% -10%,
+        #49206e 0%, transparent 47%),
+    radial-gradient(ellipse at 0% 40%,
+        #191044 0%, transparent 40%),
+    radial-gradient(ellipse at 100% 75%,
+        #142451 0%, transparent 42%),
+    #080513;
 
 }
 
-/* =========================
-3. ANIMATED BACKGROUND
-========================= */
+/* ================================================
+GALAXY BACKGROUND
+================================================ */
 
 .animated-background {
 position: fixed;
@@ -72,371 +71,413 @@ overflow: hidden;
 pointer-events: none;
 
 background:
-    radial-gradient(circle at 15% 20%, rgba(168, 85, 247, .17), transparent 28%),
-    radial-gradient(circle at 85% 35%, rgba(0, 217, 255, .12), transparent 30%),
-    radial-gradient(circle at 50% 100%, rgba(255, 60, 172, .12), transparent 35%);
-animation: backgroundPulse 12s ease-in-out infinite alternate;
+    radial-gradient(circle at 20% 20%,
+        rgba(255, 79, 216, .12), transparent 27%),
+    radial-gradient(circle at 80% 35%,
+        rgba(66, 232, 255, .11), transparent 30%),
+    radial-gradient(circle at 50% 90%,
+        rgba(124, 58, 237, .16), transparent 35%);
+animation: galaxyBreathing 12s ease-in-out infinite alternate;
 
 }
 
-/* Moving sun */
+/* Colorful galaxy sun */
 
 .sun {
 position: absolute;
-width: 210px;
-height: 210px;
-top: 8%;
-left: 50%;
+width: 230px;
+height: 230px;
 
-transform: translateX(-50%);
+top: 7%;
+left: 50%;
 border-radius: 50%;
+transform: translateX(-50%);
 background:
     radial-gradient(circle at 35% 30%,
-        #fff8d6 0%,
-        #ffd166 12%,
-        #ff8c42 35%,
-        #ff3cac 65%,
-        #7b2ff7 100%);
+        #fff7d5 0%,
+        #ffd6f6 8%,
+        #ff4fd8 28%,
+        #a855f7 56%,
+        #303dff 80%,
+        transparent 100%);
 box-shadow:
-    0 0 35px rgba(255, 60, 172, .4),
-    0 0 90px rgba(255, 140, 66, .25),
-    0 0 150px rgba(168, 85, 247, .18);
-opacity: .65;
-animation: sunFloat 9s ease-in-out infinite alternate;
+    0 0 30px rgba(255, 79, 216, .4),
+    0 0 80px rgba(168, 85, 247, .32),
+    0 0 150px rgba(66, 232, 255, .15);
+opacity: .72;
+animation: sunJourney 12s ease-in-out infinite alternate;
 
 }
 
-/* Moving mountains */
+/* Futuristic mountains */
 
 .mountains {
 position: absolute;
-inset: auto 0 0;
-height: 48%;
+bottom: 0;
+left: -15%;
+width: 130%;
+height: 45%;
 
+opacity: .58;
 background:
-    linear-gradient(140deg, transparent 35%, rgba(100, 36, 160, .5) 35.2% 55%, transparent 55.2%),
-    linear-gradient(220deg, transparent 25%, rgba(23, 32, 86, .85) 25.2% 58%, transparent 58.2%),
-    linear-gradient(150deg, transparent 30%, rgba(48, 23, 93, .8) 30.2% 60%, transparent 60.2%);
-background-size: 120% 100%, 130% 100%, 150% 100%;
-background-position: 0 0, 100% 0, 50% 0;
+    linear-gradient(145deg,
+        transparent 37%,
+        rgba(130, 54, 211, .48) 37.2% 58%,
+        transparent 58.2%),
+    linear-gradient(220deg,
+        transparent 24%,
+        rgba(39, 51, 126, .8) 24.2% 57%,
+        transparent 57.2%),
+    linear-gradient(150deg,
+        transparent 35%,
+        rgba(61, 26, 104, .85) 35.2% 62%,
+        transparent 62.2%);
+background-size: 100% 100%, 100% 100%, 100% 100%;
 background-repeat: no-repeat;
-opacity: .55;
-animation: mountainDrift 18s ease-in-out infinite alternate;
+animation: mountainJourney 18s ease-in-out infinite alternate;
 
 }
 
-/* Neon water */
+/* Neon galaxy ocean */
 
 .water {
 position: absolute;
-left: -20%;
-right: -20%;
-bottom: -8%;
-height: 35%;
 
+bottom: -5%;
+left: -20%;
+width: 140%;
+height: 32%;
 background:
     repeating-linear-gradient(
         0deg,
-        transparent 0 10px,
-        rgba(0, 217, 255, .09) 11px 12px,
-        transparent 13px 24px
+        transparent 0 12px,
+        rgba(66, 232, 255, .15) 13px 14px,
+        transparent 15px 26px
     ),
     linear-gradient(
-        180deg,
+        to bottom,
         transparent,
-        rgba(10, 18, 65, .65),
-        rgba(9, 4, 30, .95)
+        rgba(39, 25, 100, .55),
+        rgba(8, 5, 19, .98)
     );
-transform: perspective(400px) rotateX(12deg);
+transform: perspective(350px) rotateX(12deg);
 transform-origin: bottom;
-mask-image: linear-gradient(to bottom, transparent, black 25%);
--webkit-mask-image: linear-gradient(to bottom, transparent, black 25%);
-animation: waterFlow 7s linear infinite;
+mask-image: linear-gradient(to bottom, transparent, #000 30%);
+-webkit-mask-image: linear-gradient(to bottom, transparent, #000 30%);
+animation: oceanFlow 8s linear infinite;
 
 }
 
-/* Additional ambient lights */
+/* Moving aurora lights */
 
 body::before,
 body::after {
 content: “”;
 position: fixed;
+
 z-index: -4;
 pointer-events: none;
+width: 320px;
+height: 320px;
 border-radius: 50%;
-filter: blur(70px);
+filter: blur(90px);
+will-change: transform;
+
 }
 
 body::before {
-width: 280px;
-height: 280px;
-top: 25%;
-left: -130px;
-background: rgba(168, 85, 247, .22);
-animation: orbOne 14s ease-in-out infinite alternate;
+top: 15%;
+left: -170px;
+
+background: rgba(168, 85, 247, .28);
+animation: auroraLeft 13s ease-in-out infinite alternate;
+
 }
 
 body::after {
-width: 300px;
-height: 300px;
-right: -140px;
+right: -170px;
 bottom: 8%;
-background: rgba(0, 217, 255, .17);
-animation: orbTwo 17s ease-in-out infinite alternate;
+
+background: rgba(255, 79, 216, .19);
+animation: auroraRight 16s ease-in-out infinite alternate;
+
 }
 
-/* =========================
-4. MAIN GLASS CARD
-========================= */
+/* ================================================
+MAIN PROFILE CARD
+================================================ */
 
 .glass-card {
-width: 100%;
-max-width: 570px;
 position: relative;
 isolation: isolate;
-overflow: hidden;
 
-padding: 42px 28px 30px;
+width: 100%;
+max-width: 560px;
 margin: 0 auto 35px;
+padding: 38px 26px 28px;
 border-radius: 30px;
-border: 1px solid var(--glass-border);
+border: 1px solid rgba(255, 255, 255, .15);
 background:
     linear-gradient(
         145deg,
-        rgba(255, 255, 255, .075),
-        rgba(255, 255, 255, .012) 45%,
-        rgba(168, 85, 247, .055)
+        rgba(255, 255, 255, .085),
+        rgba(255, 255, 255, .018) 40%,
+        rgba(168, 85, 247, .09)
     ),
-    var(--glass);
--webkit-backdrop-filter: blur(22px);
-backdrop-filter: blur(22px);
+    var(--panel);
+-webkit-backdrop-filter: blur(24px);
+backdrop-filter: blur(24px);
 box-shadow:
-    0 25px 90px rgba(0, 0, 0, .45),
-    inset 0 1px 0 rgba(255, 255, 255, .09),
-    0 0 45px rgba(168, 85, 247, .08);
-animation: cardEntrance 1s cubic-bezier(.2, .8, .2, 1) both;
+    0 30px 100px rgba(0, 0, 0, .42),
+    0 0 40px rgba(168, 85, 247, .12),
+    inset 0 1px 0 rgba(255, 255, 255, .12);
+animation: cardAppear 1s cubic-bezier(.2, .8, .2, 1) both;
 
 }
 
-/* Animated neon border */
+/* Rainbow animated outline */
 
 .glass-card::before {
 content: “”;
 position: absolute;
-inset: -2px;
-z-index: -1;
+inset: -1px;
+z-index: -2;
 
+padding: 2px;
 border-radius: inherit;
 background: conic-gradient(
-    from var(--border-angle, 0deg),
-    transparent 0%,
-    rgba(0, 217, 255, .7) 12%,
-    transparent 24%,
-    rgba(255, 60, 172, .75) 42%,
-    transparent 55%,
-    rgba(168, 85, 247, .8) 75%,
-    transparent 90%
+    from var(--maral-angle, 0deg),
+    #42e8ff,
+    #a855f7,
+    #ff4fd8,
+    #ffe29a,
+    #617bff,
+    #42e8ff
 );
-animation: borderRotate 8s linear infinite;
+animation: rainbowBorder 9s linear infinite;
+-webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+pointer-events: none;
 
 }
 
-/* Inner card surface */
+/* Soft inner highlight */
 
 .glass-card::after {
 content: “”;
 position: absolute;
-inset: 1px;
-z-index: -1;
-border-radius: 29px;
-background: rgba(9, 6, 23, .94);
-}
 
-/* =========================
-5. PROFILE TITLE
-========================= */
-
-.glass-card h1 {
-position: relative;
-text-align: center;
-
-margin: 0 auto 12px;
-padding: 8px 0;
-font-family: 'Vazirmatn', sans-serif;
-font-size: clamp(23px, 5vw, 34px);
-font-weight: 900;
-letter-spacing: .5px;
-line-height: 1.6;
-background: linear-gradient(
-    90deg,
-    #ffffff,
-    #e9b8ff,
-    #80edff,
-    #ffffff
-);
-background-size: 250% auto;
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-filter: drop-shadow(0 0 12px rgba(168, 85, 247, .3));
-animation: titleShine 5s linear infinite;
-
-}
-
-.glass-card h1::before {
-content: “MARAL”;
-display: block;
-
-direction: ltr;
-margin-bottom: 3px;
-font-family: 'Orbitron', sans-serif;
-font-size: clamp(27px, 7vw, 42px);
-font-weight: 900;
-letter-spacing: 8px;
-background: linear-gradient(
-    90deg,
-    #00d9ff,
-    #ffffff,
-    #ff3cac,
-    #a855f7,
-    #00d9ff
-);
-background-size: 300% auto;
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-animation: titleShine 5s linear infinite;
-
-}
-
-.bio {
-text-align: center;
-color: var(–muted);
-font-size: 14px;
-font-weight: 500;
-
-margin-bottom: 30px;
-line-height: 2;
-animation: fadeInUp .9s .2s both;
-
-}
-
-/* Small animated line */
-
-.bio::after {
-content: “”;
-display: block;
-
-width: 90px;
-height: 3px;
-margin: 15px auto 0;
-border-radius: 10px;
+top: 0;
+left: 10%;
+width: 80%;
+height: 1px;
 background: linear-gradient(
     90deg,
     transparent,
-    var(--blue),
-    var(--pink),
+    rgba(255, 255, 255, .7),
     transparent
 );
-background-size: 200% 100%;
-animation: lineFlow 3s linear infinite;
+box-shadow: 0 0 18px rgba(255, 255, 255, .3);
 
 }
 
-/* =========================
-6. SOCIAL LINKS
-========================= */
+/* ================================================
+MARAL BRAND
+================================================ */
+
+.glass-card h1 {
+text-align: center;
+
+margin-bottom: 12px;
+font-size: clamp(23px, 5vw, 32px);
+font-weight: 900;
+line-height: 1.7;
+background: linear-gradient(
+    90deg,
+    #ffffff,
+    #ffd9fa,
+    #a9f5ff,
+    #ffe29a,
+    #ffffff
+);
+background-size: 300% auto;
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+filter: drop-shadow(0 0 15px rgba(168, 85, 247, .25));
+animation: brandShimmer 7s linear infinite;
+
+}
+
+/* MARAL neon logo */
+
+.glass-card h1::before {
+content: “MARAL”;
+
+display: block;
+direction: ltr;
+margin-bottom: 5px;
+font-family: 'Orbitron', sans-serif;
+font-size: clamp(33px, 8vw, 47px);
+font-weight: 900;
+letter-spacing: 9px;
+background: linear-gradient(
+    90deg,
+    #42e8ff,
+    #ffffff,
+    #ff4fd8,
+    #ffe29a,
+    #a855f7,
+    #42e8ff
+);
+background-size: 350% auto;
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+filter: drop-shadow(0 0 8px rgba(255, 79, 216, .42));
+animation: brandShimmer 6s linear infinite;
+
+}
+
+/* Profile description */
+
+.bio {
+margin-bottom: 30px;
+
+color: var(--muted);
+text-align: center;
+font-size: 14px;
+line-height: 2.1;
+animation: fadeRise .9s .2s both;
+
+}
+
+.bio::after {
+content: “”;
+
+display: block;
+width: 100px;
+height: 3px;
+margin: 14px auto 0;
+border-radius: 20px;
+background: linear-gradient(
+    90deg,
+    transparent,
+    var(--cyan),
+    var(--pink),
+    var(--gold),
+    transparent
+);
+background-size: 250% 100%;
+box-shadow: 0 0 15px rgba(168, 85, 247, .4);
+animation: neonLine 4s linear infinite;
+
+}
+
+/* ================================================
+SOCIAL BUTTONS
+================================================ */
 
 .links-list {
 display: flex;
 flex-direction: column;
-gap: 14px;
+gap: 13px;
+
 width: 100%;
+
 }
 
+/* Each social card */
+
 .link-btn {
-–accent: #a855f7;
+–accent: #b18aff;
 
 position: relative;
 isolation: isolate;
 overflow: hidden;
 display: grid;
-grid-template-columns: 42px minmax(0, 1fr);
+grid-template-columns: 44px minmax(0, 1fr);
 grid-template-rows: auto auto;
 align-items: center;
-column-gap: 12px;
+column-gap: 13px;
 width: 100%;
-min-height: 76px;
-padding: 14px 18px;
+min-height: 78px;
+padding: 14px 16px;
+border: 1px solid rgba(255, 255, 255, .105);
+border-radius: 19px;
+color: #fff;
 text-decoration: none;
-color: var(--text);
 background:
     linear-gradient(
-        120deg,
-        rgba(255, 255, 255, .075),
-        rgba(255, 255, 255, .018)
+        110deg,
+        rgba(255, 255, 255, .065),
+        rgba(255, 255, 255, .012) 65%,
+        color-mix(in srgb, var(--accent) 8%, transparent)
     );
-border: 1px solid rgba(255, 255, 255, .10);
-border-radius: 18px;
 box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, .035),
-    0 7px 20px rgba(0, 0, 0, .15);
+    inset 0 1px 0 rgba(255, 255, 255, .045),
+    0 8px 24px rgba(0, 0, 0, .16);
 transition:
-    transform .35s cubic-bezier(.2, .8, .2, 1),
+    transform .35s ease,
     border-color .35s ease,
-    background .35s ease,
-    box-shadow .35s ease;
-animation: linkEntrance .65s both;
+    box-shadow .35s ease,
+    background .35s ease;
+animation: linkAppear .7s both;
 
 }
 
-/* Stagger the link animations */
+/* Entrance sequence */
 
-.link-btn:nth-child(1) { animation-delay: .15s; }
-.link-btn:nth-child(2) { animation-delay: .25s; }
-.link-btn:nth-child(3) { animation-delay: .35s; }
-.link-btn:nth-child(4) { animation-delay: .45s; }
-.link-btn:nth-child(5) { animation-delay: .55s; }
-.link-btn:nth-child(6) { animation-delay: .65s; }
-.link-btn:nth-child(7) { animation-delay: .75s; }
-.link-btn:nth-child(8) { animation-delay: .85s; }
+.link-btn:nth-child(1) { animation-delay: .10s; }
+.link-btn:nth-child(2) { animation-delay: .20s; }
+.link-btn:nth-child(3) { animation-delay: .30s; }
+.link-btn:nth-child(4) { animation-delay: .40s; }
+.link-btn:nth-child(5) { animation-delay: .50s; }
+.link-btn:nth-child(6) { animation-delay: .60s; }
+.link-btn:nth-child(7) { animation-delay: .70s; }
+.link-btn:nth-child(8) { animation-delay: .80s; }
 
-/* Sliding shine */
+/* Animated reflection */
 
 .link-btn::before {
 content: “”;
-position: absolute;
-inset: 0;
-z-index: -1;
 
+position: absolute;
+z-index: -1;
+inset: 0;
 background: linear-gradient(
-    110deg,
+    115deg,
     transparent 20%,
-    rgba(255, 255, 255, .09) 45%,
+    rgba(255, 255, 255, .11) 47%,
     transparent 70%
 );
 transform: translateX(-130%);
-transition: transform .7s ease;
+transition: transform .8s ease;
 
 }
 
-/* Neon light at the left edge */
+/* Accent light */
 
 .link-btn::after {
 content: “”;
-position: absolute;
 
+position: absolute;
+top: 22%;
+bottom: 22%;
 left: 0;
-top: 20%;
-bottom: 20%;
 width: 3px;
 border-radius: 10px;
 background: var(--accent);
-box-shadow: 0 0 14px var(--accent);
-opacity: .5;
-transition: opacity .3s, top .3s, bottom .3s;
+box-shadow: 0 0 12px var(--accent);
+opacity: .55;
+transition: .35s ease;
 
 }
+
+/* Icon box */
 
 .link-btn i {
 grid-column: 1;
@@ -445,92 +486,101 @@ grid-row: 1 / 3;
 display: flex;
 align-items: center;
 justify-content: center;
-width: 42px;
-height: 42px;
-border-radius: 13px;
-color: var(--accent);
-background: color-mix(in srgb, var(--accent) 13%, transparent);
-border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+width: 44px;
+height: 44px;
+border-radius: 14px;
 font-size: 21px;
+color: var(--accent);
+background: color-mix(in srgb, var(--accent) 12%, transparent);
+border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+box-shadow: 0 0 16px color-mix(in srgb, var(--accent) 8%, transparent);
 transition:
-    transform .4s ease,
-    color .4s ease,
-    background .4s ease,
-    box-shadow .4s ease;
+    transform .4s cubic-bezier(.2, .8, .2, 1),
+    color .3s ease,
+    background .3s ease,
+    box-shadow .3s ease;
 
 }
+
+/* Link title */
 
 .link-btn span {
 grid-column: 2;
 grid-row: 1;
 
-font-size: 15px;
+font-size: 14px;
 font-weight: 800;
-line-height: 1.8;
+line-height: 1.9;
 overflow-wrap: anywhere;
+transition: color .3s ease;
 
 }
+
+/* Username */
 
 .link-btn small {
 grid-column: 2;
 grid-row: 2;
 
 margin-top: 2px;
-color: #aaa4c3;
-direction: ltr;
-text-align: right;
-font-family: 'Vazirmatn', sans-serif;
+color: #b9b0ce;
 font-size: 11px;
 font-weight: 400;
+direction: ltr;
+text-align: right;
 overflow-wrap: anywhere;
 
 }
 
-/* Social brand colors */
+/* ================================================
+SOCIAL BRAND COLORS
+================================================ */
 
 .link-btn:has(.fa-instagram) {
-–accent: #ff5bba;
+–accent: #ff70c7;
 }
 
 .link-btn:has(.fa-snapchat) {
-–accent: #ffe500;
+–accent: #ffe66d;
 }
 
 .link-btn:has(.fa-tiktok) {
-–accent: #00f2ea;
+–accent: #58f6ee;
 }
 
 .link-btn:has(.fa-twitter) {
-–accent: #55c7ff;
+–accent: #71baff;
 }
 
 .link-btn:has(.fa-telegram) {
-–accent: #36bafa;
+–accent: #52d4ff;
 }
 
 .link-btn.whatsapp {
-–accent: #25e98b;
+–accent: #53ffad;
 }
 
 .link-btn.website {
-–accent: #b48aff;
+–accent: #c6a0ff;
 }
 
-/* Hover interaction */
+/* Hover glow */
 
 .link-btn:hover {
-transform: translateY(-5px) scale(1.015);
+transform: translateY(-5px) scale(1.018);
 
-border-color: color-mix(in srgb, var(--accent) 65%, transparent);
+border-color: color-mix(in srgb, var(--accent) 75%, transparent);
 background:
     linear-gradient(
         110deg,
-        color-mix(in srgb, var(--accent) 13%, transparent),
-        rgba(255, 255, 255, .045)
+        color-mix(in srgb, var(--accent) 15%, transparent),
+        rgba(255, 255, 255, .04),
+        color-mix(in srgb, var(--accent) 7%, transparent)
     );
 box-shadow:
-    0 12px 28px rgba(0, 0, 0, .25),
-    0 0 22px color-mix(in srgb, var(--accent) 20%, transparent);
+    0 12px 30px rgba(0, 0, 0, .25),
+    0 0 25px color-mix(in srgb, var(--accent) 20%, transparent),
+    inset 0 0 20px color-mix(in srgb, var(--accent) 5%, transparent);
 
 }
 
@@ -547,27 +597,23 @@ opacity: 1;
 .link-btn:hover i {
 transform: rotate(-8deg) scale(1.12);
 
-color: #fff;
+color: #12091f;
 background: var(--accent);
-box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 60%, transparent);
+box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 55%, transparent);
 
+}
+
+.link-btn:hover span {
+color: var(–accent);
 }
 
 .link-btn:active {
 transform: scale(.975);
 }
 
-/* Keyboard accessibility */
-
-.link-btn:focus-visible,
-.service-btn:focus-visible {
-outline: 3px solid var(–blue);
-outline-offset: 5px;
-}
-
-/* =========================
-7. SERVICE BOX
-========================= */
+/* ================================================
+SERVICE SECTION
+================================================ */
 
 .service-box {
 position: relative;
@@ -577,83 +623,92 @@ overflow: hidden;
 width: 100%;
 max-width: 700px;
 margin: 38px auto 0;
-padding: 28px 23px;
-border-radius: 24px;
-border: 1px solid rgba(168, 85, 247, .35);
+padding: 29px 23px;
+border-radius: 25px;
+border: 1px solid rgba(168, 85, 247, .3);
 background:
-    linear-gradient(
-        145deg,
-        rgba(168, 85, 247, .12),
-        rgba(0, 217, 255, .045),
-        rgba(255, 60, 172, .07)
-    ),
-    rgba(9, 6, 24, .7);
+    radial-gradient(ellipse at 0% 0%,
+        rgba(255, 79, 216, .11),
+        transparent 55%),
+    radial-gradient(ellipse at 100% 100%,
+        rgba(66, 232, 255, .09),
+        transparent 50%),
+    rgba(14, 8, 32, .85);
+-webkit-backdrop-filter: blur(18px);
+backdrop-filter: blur(18px);
 box-shadow:
-    0 15px 45px rgba(0, 0, 0, .23),
-    inset 0 0 30px rgba(168, 85, 247, .045);
--webkit-backdrop-filter: blur(16px);
-backdrop-filter: blur(16px);
-animation: fadeInUp 1s .5s both;
+    0 18px 50px rgba(0, 0, 0, .25),
+    0 0 30px rgba(168, 85, 247, .08);
+animation: fadeRise 1s .3s both;
 
 }
+
+/* Ambient light */
 
 .service-box::before {
 content: “”;
+
 position: absolute;
 z-index: -1;
-
-width: 190px;
-height: 190px;
-top: -110px;
-right: -80px;
+top: -120px;
+right: -100px;
+width: 240px;
+height: 240px;
 border-radius: 50%;
-background: rgba(168, 85, 247, .28);
-filter: blur(45px);
-animation: orbOne 9s ease-in-out infinite alternate;
+background: rgba(168, 85, 247, .22);
+filter: blur(55px);
+animation: auroraLeft 12s ease-in-out infinite alternate;
 
 }
 
+/* Animated rainbow divider */
+
 .service-box::after {
 content: “”;
-position: absolute;
 
+position: absolute;
+top: 0;
 left: 0;
 right: 0;
-top: 0;
 height: 2px;
 background: linear-gradient(
     90deg,
     transparent,
-    var(--blue),
+    var(--cyan),
     var(--pink),
+    var(--gold),
     var(--purple),
     transparent
 );
-background-size: 250% 100%;
-animation: lineFlow 5s linear infinite;
+background-size: 300% 100%;
+animation: neonLine 5s linear infinite;
 
 }
+
+/* Service heading */
 
 .service-box h3 {
-position: relative;
-
 margin-bottom: 20px;
-color: #f2d5ff;
+
+color: #f5ddff;
 font-size: clamp(17px, 4vw, 21px);
-font-weight: 800;
+font-weight: 900;
 line-height: 1.9;
-text-shadow: 0 0 20px rgba(168, 85, 247, .3);
+text-shadow:
+    0 0 15px rgba(168, 85, 247, .32),
+    0 0 35px rgba(255, 79, 216, .12);
 
 }
 
-.service-box p {
-position: relative;
+/* Service paragraphs */
 
+.service-box p {
 margin-bottom: 16px;
-color: #d0cbe0;
+
+color: #d2c8e6;
 font-size: 13px;
 font-weight: 400;
-line-height: 2.25;
+line-height: 2.35;
 text-align: justify;
 
 }
@@ -662,9 +717,9 @@ text-align: justify;
 margin-bottom: 25px;
 }
 
-/* =========================
-8. SERVICE BUTTON
-========================= */
+/* ================================================
+WHATSAPP CTA
+================================================ */
 
 .service-btn {
 position: relative;
@@ -677,9 +732,9 @@ justify-content: center;
 gap: 12px;
 width: 100%;
 min-height: 58px;
-padding: 15px 18px;
+padding: 15px 17px;
+border-radius: 17px;
 border: 1px solid rgba(255, 255, 255, .2);
-border-radius: 16px;
 color: #fff;
 text-align: center;
 text-decoration: none;
@@ -689,16 +744,17 @@ font-weight: 800;
 line-height: 1.9;
 background: linear-gradient(
     110deg,
-    #6d28d9,
-    #a855f7,
-    #ec4899,
-    #7c3aed
+    #7138ee,
+    #b04dff,
+    #ff4fd8,
+    #7161ff,
+    #7138ee
 );
-background-size: 250% 100%;
+background-size: 300% 100%;
 box-shadow:
-    0 8px 25px rgba(168, 85, 247, .23),
-    inset 0 1px 0 rgba(255, 255, 255, .18);
-animation: buttonGradient 6s ease infinite;
+    0 9px 27px rgba(168, 85, 247, .25),
+    inset 0 1px 0 rgba(255, 255, 255, .2);
+animation: buttonColors 7s ease infinite;
 transition:
     transform .35s ease,
     box-shadow .35s ease;
@@ -706,151 +762,152 @@ transition:
 }
 
 .service-btn i {
-font-size: 17px;
+font-size: 18px;
+
+filter: drop-shadow(0 0 7px rgba(255, 255, 255, .35));
 transition: transform .35s ease;
+
 }
 
 .service-btn:hover {
 transform: translateY(-4px);
 
 box-shadow:
-    0 15px 35px rgba(168, 85, 247, .35),
-    0 0 25px rgba(236, 72, 153, .18);
+    0 15px 38px rgba(168, 85, 247, .35),
+    0 0 25px rgba(255, 79, 216, .2);
 
 }
 
 .service-btn:hover i {
-transform: translate(-4px, -2px) rotate(-10deg);
+transform: translate(-4px, -2px) rotate(-12deg);
 }
 
 .service-btn:active {
-transform: scale(.97);
+transform: scale(.975);
 }
 
-/* =========================
-9. SCROLLBAR
-========================= */
+/* ================================================
+SCROLLBAR & SELECTION
+================================================ */
 
 ::-webkit-scrollbar {
-width: 8px;
+width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-background: #070411;
+background: #080513;
 }
 
 ::-webkit-scrollbar-thumb {
-border-radius: 10px;
+border-radius: 20px;
 
 background: linear-gradient(
     180deg,
-    var(--purple),
     var(--pink),
-    var(--blue)
+    var(--purple),
+    var(--cyan)
 );
 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-background: var(–pink);
+background: var(–gold);
 }
 
 ::selection {
 color: #fff;
-background: rgba(168, 85, 247, .65);
+background: rgba(168, 85, 247, .7);
 }
 
-/* =========================
-10. ANIMATION KEYFRAMES
-========================= */
+/* ================================================
+ANIMATIONS
+================================================ */
 
-@keyframes backgroundPulse {
+@keyframes galaxyBreathing {
 0% {
 filter: hue-rotate(0deg);
 transform: scale(1);
 }
 
 50% {
-    filter: hue-rotate(18deg);
+    filter: hue-rotate(15deg);
 }
 100% {
     filter: hue-rotate(-15deg);
-    transform: scale(1.08);
+    transform: scale(1.06);
 }
 
 }
 
-@keyframes sunFloat {
+@keyframes sunJourney {
 0% {
 transform: translateX(-50%) translateY(0) scale(1);
 }
 
 50% {
-    transform: translateX(-46%) translateY(-18px) scale(1.05);
+    transform: translateX(-44%) translateY(-18px) scale(1.06);
 }
 100% {
-    transform: translateX(-54%) translateY(12px) scale(.97);
+    transform: translateX(-56%) translateY(12px) scale(.96);
 }
 
 }
 
-@keyframes mountainDrift {
+@keyframes mountainJourney {
 0% {
-background-position: 0 0, 100% 0, 50% 0;
-transform: translateX(0);
+transform: translateX(0) scale(1);
 }
 
 100% {
-    background-position: 12% 0, 85% 0, 60% 0;
-    transform: translateX(-20px);
+    transform: translateX(-22px) scale(1.04);
 }
 
 }
 
-@keyframes waterFlow {
+@keyframes oceanFlow {
 0% {
 background-position: 0 0, 0 0;
 }
 
 100% {
-    background-position: 0 50px, 0 0;
+    background-position: 0 52px, 0 0;
 }
 
 }
 
-@keyframes orbOne {
+@keyframes auroraLeft {
 0% {
 transform: translate(0, 0) scale(1);
 }
 
 50% {
-    transform: translate(70px, 50px) scale(1.2);
+    transform: translate(65px, 55px) scale(1.2);
 }
 100% {
-    transform: translate(25px, -40px) scale(.9);
+    transform: translate(20px, -45px) scale(.9);
 }
 
 }
 
-@keyframes orbTwo {
+@keyframes auroraRight {
 0% {
 transform: translate(0, 0) scale(1);
 }
 
 50% {
-    transform: translate(-65px, -50px) scale(1.15);
+    transform: translate(-60px, -50px) scale(1.18);
 }
 100% {
-    transform: translate(-20px, 40px) scale(.9);
+    transform: translate(-25px, 40px) scale(.92);
 }
 
 }
 
-@keyframes cardEntrance {
+@keyframes cardAppear {
 from {
 opacity: 0;
-transform: translateY(45px) scale(.96);
-filter: blur(8px);
+transform: translateY(35px) scale(.96);
+filter: blur(7px);
 }
 
 to {
@@ -861,18 +918,18 @@ to {
 
 }
 
-@keyframes titleShine {
+@keyframes brandShimmer {
 0% {
-background-position: 0% 50%;
+background-position: 0% center;
 }
 
 100% {
-    background-position: 250% 50%;
+    background-position: 300% center;
 }
 
 }
 
-@keyframes fadeInUp {
+@keyframes fadeRise {
 from {
 opacity: 0;
 transform: translateY(22px);
@@ -885,10 +942,10 @@ to {
 
 }
 
-@keyframes linkEntrance {
+@keyframes linkAppear {
 from {
 opacity: 0;
-transform: translateY(18px);
+transform: translateY(16px);
 }
 
 to {
@@ -898,85 +955,82 @@ to {
 
 }
 
-@keyframes lineFlow {
+@keyframes neonLine {
 0% {
-background-position: 100% 0;
+background-position: 100% center;
 }
 
 100% {
-    background-position: -100% 0;
+    background-position: -200% center;
 }
 
 }
 
-@keyframes buttonGradient {
+@keyframes buttonColors {
 0% {
-background-position: 0% 50%;
+background-position: 0% center;
 }
 
 50% {
-    background-position: 100% 50%;
+    background-position: 100% center;
 }
 100% {
-    background-position: 0% 50%;
+    background-position: 0% center;
 }
 
 }
 
-@keyframes borderRotate {
+@keyframes rainbowBorder {
 from {
+–maral-angle: 0deg;
 transform: rotate(0deg);
 }
 
 to {
+    --maral-angle: 360deg;
     transform: rotate(360deg);
 }
 
 }
 
-/* =========================
-11. MOBILE RESPONSIVE
-========================= */
+/* ================================================
+RESPONSIVE DESIGN
+================================================ */
 
 @media (max-width: 600px) {
 body {
-padding: 28px 13px 30px;
+padding: 28px 12px 28px;
 }
 
 .glass-card {
-    max-width: 100%;
-    padding: 32px 17px 22px;
+    padding: 30px 16px 22px;
     border-radius: 25px;
     margin-bottom: 24px;
-}
-.glass-card::after {
-    border-radius: 24px;
 }
 .glass-card h1 {
     font-size: 23px;
 }
 .glass-card h1::before {
-    font-size: 29px;
+    font-size: 32px;
     letter-spacing: 6px;
 }
 .bio {
     font-size: 13px;
-    margin-bottom: 24px;
+    margin-bottom: 23px;
 }
 .links-list {
     gap: 11px;
 }
 .link-btn {
     min-height: 70px;
-    padding: 12px 13px;
-    border-radius: 15px;
+    padding: 12px;
+    border-radius: 16px;
     column-gap: 10px;
 }
 .link-btn i {
     width: 39px;
     height: 39px;
     font-size: 19px;
-    border-radius: 12px;
 }
 .link-btn span {
     font-size: 13px;
@@ -985,38 +1039,34 @@ padding: 28px 13px 30px;
     font-size: 10px;
 }
 .service-box {
-    margin-top: 28px;
-    padding: 23px 16px;
-    border-radius: 20px;
+    padding: 23px 15px;
+    margin-top: 27px;
+    border-radius: 21px;
 }
 .service-box h3 {
     font-size: 17px;
 }
 .service-box p {
     font-size: 12px;
-    line-height: 2.2;
+    line-height: 2.25;
 }
 .service-btn {
-    padding: 13px 12px;
+    min-height: 54px;
+    padding: 12px;
     font-size: 12px;
 }
 .sun {
-    width: 145px;
-    height: 145px;
-    top: 5%;
+    width: 150px;
+    height: 150px;
 }
 .mountains {
     height: 35%;
 }
 .water {
-    height: 24%;
+    height: 23%;
 }
 
 }
-
-/* =========================
-12. SMALL PHONES
-========================= */
 
 @media (max-width: 360px) {
 body {
@@ -1027,17 +1077,16 @@ padding-inline: 9px;
     padding-inline: 12px;
 }
 .glass-card h1::before {
-    font-size: 25px;
-    letter-spacing: 4px;
+    font-size: 27px;
+    letter-spacing: 5px;
 }
 .link-btn {
-    grid-template-columns: 34px minmax(0, 1fr);
-    padding-inline: 10px;
+    grid-template-columns: 35px minmax(0, 1fr);
     column-gap: 9px;
 }
 .link-btn i {
-    width: 34px;
-    height: 34px;
+    width: 35px;
+    height: 35px;
     font-size: 17px;
 }
 .service-box {
@@ -1046,9 +1095,15 @@ padding-inline: 9px;
 
 }
 
-/* =========================
-13. ACCESSIBILITY
-========================= */
+/* ================================================
+ACCESSIBILITY
+================================================ */
+
+.link-btn:focus-visible,
+.service-btn:focus-visible {
+outline: 2px solid var(–cyan);
+outline-offset: 4px;
+}
 
 @media (prefers-reduced-motion: reduce) {
 *,
